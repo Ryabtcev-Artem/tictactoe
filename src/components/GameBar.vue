@@ -67,7 +67,6 @@ defineProps({
 </template>
 
 <style scoped>
-
 .error{
   display: flex;
   flex-direction: column;
@@ -110,5 +109,11 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 728px){
+  .Bar{
+    margin-top: 60px;
+  }
+  
 }
 </style>
