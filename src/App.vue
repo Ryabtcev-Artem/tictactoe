@@ -1,26 +1,29 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+/* eslint-disable no-unused-vars*/
+<script setup>
+import { ref } from "vue";
+import GameBar from "./components/GameBar.vue";
+import TheHeader from "./components/Comp.vue";
+import PlayButton from "./components/PlayButton.vue";
+const showGameBar = ref(false);
+function showBar() {
+  showGameBar.value = !showGameBar.value;
 }
 </script>
 
+<template>
+  <TheHeader />
+  <PlayButton :showGameBar="showGameBar" :showBar="showBar" />
+  <GameBar :showGameBar="showGameBar" :showBar="showBar" />
+</template>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 </style>
